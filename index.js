@@ -1,63 +1,76 @@
 //TODO: Import necessary modules
 const inquirer = require('inquirer');
-const {Circle, Square, Triangle} = require("./lib/shapes");
+const { Circle, Square, Triangle } = require("./lib/shapes");
 const fs = require('fs');
 
-//TODO: Implement the main program logic
-class Logo {
-    constructor() { // Initialize the logo with an empty array of shapes
-                this.shapes = []; // Array to store shapes
-    }
 
-    addShape(shape) { // Add a new shape to the logo
-        this.shapes.push(shape);
-    }
-
-    calculateAreaAndCircumference() {
-        this.shapes.forEach(shape => {
-            console.log(`\nArea of ${shape.constructor.name}: ${shape.calculateArea()}`);
-            console.log(`Circumference of ${shape.constructor.name}: ${shape.calculateCircumference()}`);
-        });
-    
-        if (this.shapes.length > 0) {
-            console.log('\nTotal area:', this.calculateTotalArea());
-            console.log('Total circumference:', this.calculateTotalCircumference());
+//TODO: Prompt user for input
+inquirer
+    .prompt([{
+        type: 'input',
+        name: 'textInput',
+        message: 'Enter logo text',
+        validate: function (input) {
+            //TODO: Add function to validate input length
+            if (input.length <= 3) {
+                return 'Text must less than or equal to 3characters long.';
+            }
+            return true;
+        },
+        filter: function (input) {
+            return input.toUpperCase();
         }
-    
-        this.saveToJSON();
-    
-        console.log('\nLogo saved to logo.json');
-    
-        process.exit(0);
-    
-}}
-//TODO: Create and array of questions for user input
+
+
+    }
+    ])
+
+//TODO: Add questions for user input
 const questions = [
     {
         type: 'input',
         name: 'text',
-        message: 'Enter up to 3 charecters for the logo text:',
-
+        message: 'Enter text of MAX 3 characters: ',
     },
     {
         type: 'input',
-        name: 'text-color',
-        message: 'Enter a hex color code for the logo text:',
+        name: 'color',
+        message: 'Enter color (red, blue, green, yellow, cyan, magenta): ',
     },
     {
-        type: 'input',
-        name: 'background-color',
-        message: 'Enter a hex color code for the logo background:',
-
-    },
-    {
-        type: 'input',
+        type: 'list',
         name: 'shape',
         message: 'Choose a shape',
-        choices: ['Circle', 'Square', 'Triangle'],
+        choices: ['circle', 'square', 'triangle'],
     },
 ]
-//TODO: write to a new file 
-fs.writeFile('logo.json', JSON.stringify({ shapes: [] }, null, 2), (err) => {
-    if (err) throw err;
-});
+
+    //TODO: Add answers to user input
+    .then((answers) => {
+        //TODO: Add if statement to create and write SVG file based on user input and write to file based on shape type
+        if (answers.shape === 'circle') {
+          
+            const circle = new Circle(answers.text, answers.color, answers.shape);
+            fs.writeFileSync('circle.svg', circle.render()), function(err){
+                if(err) console.log(err);
+                console.log('Circle SVG file created successfully');
+            }
+
+        } else if (answers.shape ==='square') {
+            const square = new Square(answers.text, answers.color, answers.shape);
+            fs.writeFileSync('square.svg', square.render()), function(err){
+                if(err) console.log(err);
+                console.log('Square SVG file created successfully');
+            }
+
+        } else if (answers.shape === 'triangle') {
+            const triangle = new Triangle(answers.text, answers.color, answers.shape);
+            fs.writeFileSync('triangle.svg', triangle.render()), function(err){
+                if(err) console.log(err);
+                console.log('Triangle SVG file created successfully');
+            }
+
+        } else {
+            console.log('Invalid shape selected');
+        }
+    })
