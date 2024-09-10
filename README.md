@@ -4,8 +4,8 @@
 This application allows users to enter inputs based on prompted questions to create a "logo.svg" file with the users selected inputs
 
 # Table of Contents
--[User Instructions](##User-Instructions)
--[Challenges Faced](##Challenges-Faced)
+[User Instructions](##User-Instructions)
+[Challenges Faced](##Challenges-Faced)
 
 ## User Instructions
 Step 1. Clone the repo code 
