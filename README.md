@@ -20,9 +20,6 @@ As for challenges that were ran into were the testing and passing the logic of t
 The solution I learned from the previous error was the need to install jest and on the package.json on the "scripts" change the text in "tests" to "jest"
 
 The following images are from my created logo and tests
+<img width="1290" alt="Screen Shot 2024-09-09 at 8 54 48 PM" src="https://github.com/user-attachments/assets/f5d1f8d6-f8e4-46b3-aac5-2a1094f79235">
 
-<img width="1680" alt="Screen Shot 2024-09-09 at 8 22 03 PM" src="https://github.com/user-attachments/assets/5454cfeb-5d97-4955-b486-efac3d3d41bc">
-
-<img width="1680" alt="Screen Shot 2024-09-09 at 8 23 01 PM" src="https://github.com/user-attachments/assets/204c2f2c-eba0-4108-b5f0-fa11c43cb9a5">
-
-
+<img width="1303" alt="Screen Shot 2024-09-09 at 8 55 39 PM" src="https://github.com/user-attachments/assets/fa964101-f404-4d89-b429-721c42083a18">
