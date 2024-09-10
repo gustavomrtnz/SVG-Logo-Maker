@@ -19,3 +19,8 @@ As for challenges that were ran into were the testing and passing the logic of t
 
 The solution I learned from the previous error was the need to install jest and on the package.json on the "scripts" change the text in "tests" to "jest"
 
+<img width="1680" alt="Screen Shot 2024-09-09 at 8 22 03 PM" src="https://github.com/user-attachments/assets/5454cfeb-5d97-4955-b486-efac3d3d41bc">
+
+
+![Uploading Screen Shot 2024-09-09 at 8.23.01 PM.png…]()
+
