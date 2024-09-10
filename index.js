@@ -36,21 +36,21 @@ const fs = require('fs');
                 ${circle.render()}
                 <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="50" fill="${answers.textColor}">${answers.text}</text>
             </svg>`;
-            fs.writeFileSync('circle.svg', svg);
+            fs.writeFileSync('logo.svg', svg);
         } else if (answers.shape === 'Square') {
             const square = new Square(answers.shapeColor);
             const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                 ${square.render()}
                 <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="50" fill="${answers.textColor}">${answers.text}</text>
             </svg>`;
-            fs.writeFileSync('square.svg', svg);
+            fs.writeFileSync('logo.svg', svg);
         } else if (answers.shape === 'Triangle') {
             const triangle = new Triangle(answers.shapeColor);
             const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                 ${triangle.render()}
                 <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="50" fill="${answers.textColor}">${answers.text}</text>
             </svg>`;
-            fs.writeFileSync('triangle.svg', svg);
+            fs.writeFileSync('logo.svg', svg);
         }
     });
 
